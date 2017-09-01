@@ -28,6 +28,8 @@ end
 
 platform_options = node['openstack']['dns']['platform']
 
+apt_update ''
+
 platform_options['designate_packages'].each do |pkg|
   package pkg do
     options platform_options['package_overrides']
