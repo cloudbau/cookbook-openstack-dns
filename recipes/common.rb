@@ -80,6 +80,7 @@ node.default['openstack']['dns']['conf'].tap do |conf|
   conf['service:api']['api_host'] = bind_address api_bind
   conf['service:api']['api_port'] = api_bind.port
   conf['keystone_authtoken']['auth_url'] = auth_uri
+  conf['keystone_authtoken']['auth_uri'] = auth_uri
 end
 
 # define secrets that are needed in designate.conf
