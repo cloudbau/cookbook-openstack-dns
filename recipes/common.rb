@@ -157,6 +157,8 @@ execute 'designate-manage pool update' do
   user node['openstack']['dns']['user']
   group node['openstack']['dns']['group']
   command 'designate-manage pool update'
+  retries 3
+  retry_delay 10
   action :nothing
   subscribes :run, 'template[/etc/designate/pools.yaml]'
 end
